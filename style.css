@@ -172,6 +172,17 @@ body {
     font-weight: 100;
 }
 
+a.tech-btn {
+    text-decoration: none;
+}
+
+.tech-btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
 /* Variants */
 .icon-btn {
     width: 70px;
@@ -686,9 +697,7 @@ nav a:hover {
     content: "";
     position: absolute;
     inset: 1px;
-    background: url(https://picsum.photos/300);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: var(--service-img) center / cover no-repeat;
     -webkit-clip-path: var(--clip);
     clip-path: var(--clip);
     z-index: 2;
@@ -841,39 +850,25 @@ nav a:hover {
     padding-bottom: 200px;
 }
 
-/* --- Experience Horizontal Scroll --- */
-.experience-horizontal-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 100px 0;
-}
-
-.experience-horizontal-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    width: fit-content;
-}
-
+/* --- Experience Vertical Showcase --- */
 .experience-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 40px;
-    padding: 0 5vw;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 72px 48px;
+    margin: 0 auto;
+    padding: 40px 2vw 160px;
+    align-items: start;
 }
 
 /* --- Experience Card (Exact Match Design) --- */
 .experience-card {
     position: relative;
-    width: 550px;
-    height: 700px;
+    width: 100%;
+    min-height: 620px;
     background: transparent;
-    /* Changed from white to allow overflow */
     display: flex;
     flex-direction: row;
     overflow: visible;
-    /* Changed from hidden */
-    flex-shrink: 0;
     transition: transform 0.3s ease;
     z-index: 1;
 }
@@ -905,7 +900,7 @@ nav a:hover {
 }
 
 .experience-card:hover .card-label span {
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 }
 
 /* --- Content Area (Left) --- */
@@ -913,8 +908,9 @@ nav a:hover {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    gap: 30px;
+    padding: 36px 24px 28px 32px;
+    gap: 24px;
+    min-width: 0;
 }
 
 /* Info (Top) */
@@ -935,6 +931,17 @@ nav a:hover {
     font-style: italic;
 }
 
+.card-title {
+    font-family: var(--font-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0.15rem 0 0.4rem;
+    color: #000;
+    line-height: 1.1;
+}
+
 .card-description {
     font-size: 0.85rem;
     font-weight: 700;
@@ -948,15 +955,16 @@ nav a:hover {
 /* Visual (Bottom Overflow) */
 .card-visual {
     flex: 1;
-    width: 120%;
-    height: 420px;
+    width: 110%;
+    min-height: 340px;
     border-radius: 40px;
     position: relative;
-    margin-bottom: -100px;
+    margin-bottom: -72px;
     /* Break out of box */
     z-index: 10;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     overflow: hidden;
+    background: #111;
 }
 
 .card-image-box {
@@ -973,19 +981,33 @@ nav a:hover {
 
 /* --- Label Area (Right) --- */
 .card-label {
-    width: 120px;
+    width: 100px;
     background: transparent;
-    border-left: 3px solid #000;
+    border-left: none;
     display: flex;
-    padding: 70px 0 0 0;
+    padding: 56px 0 0 0;
     position: relative;
+    flex-shrink: 0;
+    /* Match the card's top-right cut so the divider doesn't escape it */
+    clip-path: polygon(0 6%, 100% 15%, 100% 100%, 0 100%);
+}
+
+.card-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #000;
+    pointer-events: none;
 }
 
 .card-label span {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-family: var(--font-bg);
-    font-size: 5rem;
+    font-size: 3.6rem;
     font-weight: 500;
     letter-spacing: -2px;
     color: #000;
@@ -994,39 +1016,74 @@ nav a:hover {
     pointer-events: none;
 }
 
-/* Slanted line decoration matching image */
-.card-label::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: linear-gradient(135deg, transparent 94%, #eee 94.5%);
-}
 
 /* --- Responsive Design --- */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+    .experience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 56px 28px;
+    }
+
     .experience-card {
-        width: 320px;
-        height: 500px;
+        min-height: 560px;
+    }
+
+    .card-visual {
+        min-height: 280px;
     }
 
     .card-label {
-        width: 60px;
+        width: 72px;
     }
 
     .card-label span {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 64px;
+        padding: 20px 4% 120px;
+    }
+
+    .experience-card {
+        min-height: 0;
+        width: 100%;
+    }
+
+    .experience-card:nth-child(even) {
+        margin-top: 0;
+    }
+
+    .card-label {
+        width: 56px;
+    }
+
+    .card-label span {
+        font-size: 2.2rem;
     }
 
     .card-content {
-        padding: 20px;
+        padding: 22px 16px 18px 18px;
+        gap: 16px;
+    }
+
+    .card-title {
+        font-size: 1.35rem;
     }
 
     .card-description {
         font-size: 0.7rem;
+        max-width: 100%;
+    }
+
+    .card-visual {
+        min-height: 220px;
+        width: 105%;
+        margin-bottom: -48px;
+        border-radius: 28px;
     }
 }
 
@@ -1435,6 +1492,30 @@ body:hover .cursor-follower {
 
     100% {
         transform: translate(0, 0)
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .char {
+        transform: none;
+    }
+
+    .noise-overlay {
+        animation: none;
     }
 }
 
@@ -1882,6 +1963,4 @@ body:hover .cursor-follower {
 .mobile-nav-link:active {
     color: var(--accent-color);
     transform: scale(0.95);
-
 }
-

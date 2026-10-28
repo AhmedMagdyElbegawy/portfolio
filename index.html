@@ -7,8 +7,6 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Agent Ducky Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="projects-panels.css">
-    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
@@ -108,6 +106,7 @@
                     <li><a href="#hero-section">Home</a></li>
                     <li><a href="#services-section">Services</a></li>
                     <li><a href="#projects-section">Experience</a></li>
+                    <li><a href="#footer-section">Contact</a></li>
                 </ul>
             </nav>
             <div class="btn-container">
@@ -120,9 +119,9 @@
                 </button>
 
                 <!-- Text Button -->
-                <button class="tech-btn text-btn">
+                <a href="#footer-section" class="tech-btn text-btn">
                     <span class="text">CONTACT US</span>
-                </button>
+                </a>
 
                 <!-- Menu Icon Button -->
                 <button class="tech-btn icon-btn menu-btn">
@@ -165,7 +164,7 @@
                     <p class="reveal reveal-delay-4 hero-text-4">BOTH.</p>
                 </h2>
 
-                <a href="#" class="cta-brush reveal">
+                <a href="#footer-section" class="cta-brush reveal">
                     Let’s Talk
                 </a>
 
@@ -240,7 +239,7 @@
                 <div class="service-divider"></div>
 
                 <!-- Item 1 -->
-                <div class="service-item reveal">
+                <div class="service-item reveal" style="--service-img: url(service-frontend.jpg);">
                     <div class="service-bg">
                         <div class="service-bg-left"></div>
                         <div class="service-bg-center"></div>
@@ -262,7 +261,7 @@
                 <div class="service-divider"></div>
 
                 <!-- Item 2 -->
-                <div class="service-item reveal">
+                <div class="service-item reveal" style="--service-img: url(service-backend.jpg);">
                     <div class="service-bg">
                         <div class="service-bg-left"></div>
                         <div class="service-bg-center"></div>
@@ -285,7 +284,7 @@
                 <div class="service-divider"></div>
 
                 <!-- Item 3 -->
-                <div class="service-item reveal">
+                <div class="service-item reveal" style="--service-img: url(service-range.jpg);">
                     <div class="service-bg">
                         <div class="service-bg-left"></div>
                         <div class="service-bg-center"></div>
@@ -332,175 +331,195 @@
                         class="char" style="--delay: 0.38s;">E</span></span>
             </h2>
 
-            <div class="experience-horizontal-container">
-                <div class="experience-horizontal-wrapper">
-                    <div class="experience-grid">
-                        <!-- Experience Card 1 -->
-                        <div class="experience-card">
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <div class="card-meta">
-                                        <span class="card-slash">///</span>
-                                        <p class="card-description">
-                                            IDK, PUT SOME FRECKING DETAILS HERE
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-visual">
-                                    <div class="card-image-box" style="background-image: url(1.png);"></div>
-                                </div>
-                            </div>
-                            <div class="card-label">
-                                <span>/METAVERSE</span>
+            <div class="experience-grid">
+                <!-- Experience Card 1 -->
+                <article class="experience-card reveal">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="card-meta">
+                                <span class="card-slash">///</span>
+                                <h3 class="card-title">Metaverse</h3>
+                                <p class="card-description">
+                                    Spatial product systems and immersive brand worlds built for the next interface layer.
+                                </p>
                             </div>
                         </div>
-
-                        <!-- Experience Card 2 -->
-                        <div class="experience-card">
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <div class="card-meta">
-                                        <span class="card-slash">///</span>
-                                        <p class="card-description">
-                                            IDK, PUT SOME FRECKING DETAILS HERE
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-visual">
-                                    <div class="card-image-box" style="background-image: url(1.png);"></div>
-                                </div>
-                            </div>
-                            <div class="card-label">
-                                <span>/NFT</span>
-                            </div>
-                        </div>
-
-                        <!-- Experience Card 3 -->
-                        <div class="experience-card">
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <div class="card-meta">
-                                        <span class="card-slash">///</span>
-                                        <p class="card-description">
-                                            IDK, PUT SOME FRECKING DETAILS HERE
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-visual">
-                                    <div class="card-image-box" style="background-image: url(1.png);"></div>
-                                </div>
-                            </div>
-                            <div class="card-label">
-                                <span>/AVATARS</span>
-                            </div>
-                        </div>
-
-                        <!-- Experience Card 4 -->
-                        <div class="experience-card">
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <div class="card-meta">
-                                        <span class="card-slash">///</span>
-                                        <p class="card-description">
-                                            IDK, PUT SOME FRECKING DETAILS HERE
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-visual">
-                                    <div class="card-image-box" style="background-image: url(1.png);"></div>
-                                </div>
-                            </div>
-                            <div class="card-label">
-                                <span>/MIXED REALITY</span>
-                            </div>
-                        </div>
-
-                        <!-- Experience Card 5 -->
-                        <div class="experience-card">
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <div class="card-meta">
-                                        <span class="card-slash">///</span>
-                                        <p class="card-description">
-                                            IDK, PUT SOME FRECKING DETAILS HERE
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-visual">
-                                    <div class="card-image-box" style="background-image: url(1.png);"></div>
-                                </div>
-                            </div>
-                            <div class="card-label">
-                                <span>/GAMING</span>
-                            </div>
-                        </div>
-
-                        <!-- Experience Card 6 -->
-                        <div class="experience-card">
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <div class="card-meta">
-                                        <span class="card-slash">///</span>
-                                        <p class="card-description">
-                                            IDK, PUT SOME FRECKING DETAILS HERE
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-visual">
-                                    <div class="card-image-box" style="background-image: url(1.png);"></div>
-                                </div>
-                            </div>
-                            <div class="card-label">
-                                <span>/AI TECH</span>
-                            </div>
-                        </div>
-
-                        <!-- Experience Card 7 -->
-                        <div class="experience-card">
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <div class="card-meta">
-                                        <span class="card-slash">///</span>
-                                        <p class="card-description">
-                                            IDK, PUT SOME FRECKING DETAILS HERE
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-visual">
-                                    <div class="card-image-box" style="background-image: url(1.png);"></div>
-                                </div>
-                            </div>
-                            <div class="card-label">
-                                <span>/CLOUD UX</span>
-                            </div>
-                        </div>
-
-                        <!-- Experience Card 8 -->
-                        <div class="experience-card">
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <div class="card-meta">
-                                        <span class="card-slash">///</span>
-                                        <p class="card-description">
-                                            IDK, PUT SOME FRECKING DETAILS HERE
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-visual">
-                                    <div class="card-image-box" style="background-image: url(1.png);"></div>
-                                </div>
-                            </div>
-                            <div class="card-label">
-                                <span>/CREATIVE</span>
-                            </div>
+                        <div class="card-visual">
+                            <div class="card-image-box"
+                                style="background-image: url(exp-metaverse.jpg);"
+                                role="img" aria-label="Metaverse project visual"></div>
                         </div>
                     </div>
-                </div>
+                    <div class="card-label">
+                        <span>/METAVERSE</span>
+                    </div>
+                </article>
+
+                <!-- Experience Card 2 -->
+                <article class="experience-card reveal">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="card-meta">
+                                <span class="card-slash">///</span>
+                                <h3 class="card-title">NFT</h3>
+                                <p class="card-description">
+                                    Collectible digital identity work — mint flows, rarity UI, and wallet-native experiences.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <div class="card-image-box"
+                                style="background-image: url(exp-nft.jpg);"
+                                role="img" aria-label="NFT project visual"></div>
+                        </div>
+                    </div>
+                    <div class="card-label">
+                        <span>/NFT</span>
+                    </div>
+                </article>
+
+                <!-- Experience Card 3 -->
+                <article class="experience-card reveal">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="card-meta">
+                                <span class="card-slash">///</span>
+                                <h3 class="card-title">Avatars</h3>
+                                <p class="card-description">
+                                    Expressive avatar systems with procedural traits and real-time customization.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <div class="card-image-box"
+                                style="background-image: url(exp-avatars.jpg);"
+                                role="img" aria-label="Avatars project visual"></div>
+                        </div>
+                    </div>
+                    <div class="card-label">
+                        <span>/AVATARS</span>
+                    </div>
+                </article>
+
+                <!-- Experience Card 4 -->
+                <article class="experience-card reveal">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="card-meta">
+                                <span class="card-slash">///</span>
+                                <h3 class="card-title">Mixed Reality</h3>
+                                <p class="card-description">
+                                    Interfaces that bridge physical and digital — AR overlays, spatial anchors, hybrid workflows.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <div class="card-image-box"
+                                style="background-image: url(exp-mixed-reality.jpg);"
+                                role="img" aria-label="Mixed Reality project visual"></div>
+                        </div>
+                    </div>
+                    <div class="card-label">
+                        <span>/MIXED REALITY</span>
+                    </div>
+                </article>
+
+                <!-- Experience Card 5 -->
+                <article class="experience-card reveal">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="card-meta">
+                                <span class="card-slash">///</span>
+                                <h3 class="card-title">Gaming</h3>
+                                <p class="card-description">
+                                    Game UI, HUD systems, and live-ops surfaces tuned for feel and clarity under pressure.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <div class="card-image-box"
+                                style="background-image: url(exp-gaming.jpg);"
+                                role="img" aria-label="Gaming project visual"></div>
+                        </div>
+                    </div>
+                    <div class="card-label">
+                        <span>/GAMING</span>
+                    </div>
+                </article>
+
+                <!-- Experience Card 6 -->
+                <article class="experience-card reveal">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="card-meta">
+                                <span class="card-slash">///</span>
+                                <h3 class="card-title">AI Tech</h3>
+                                <p class="card-description">
+                                    Human-facing AI tools — prompt craft, model explainability, and agent orchestration UIs.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <div class="card-image-box"
+                                style="background-image: url(exp-ai-tech.jpg);"
+                                role="img" aria-label="AI Tech project visual"></div>
+                        </div>
+                    </div>
+                    <div class="card-label">
+                        <span>/AI TECH</span>
+                    </div>
+                </article>
+
+                <!-- Experience Card 7 -->
+                <article class="experience-card reveal">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="card-meta">
+                                <span class="card-slash">///</span>
+                                <h3 class="card-title">Cloud UX</h3>
+                                <p class="card-description">
+                                    Complex infrastructure made legible — consoles, observability, and multi-tenant control planes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <div class="card-image-box"
+                                style="background-image: url(exp-cloud-ux.jpg);"
+                                role="img" aria-label="Cloud UX project visual"></div>
+                        </div>
+                    </div>
+                    <div class="card-label">
+                        <span>/CLOUD UX</span>
+                    </div>
+                </article>
+
+                <!-- Experience Card 8 -->
+                <article class="experience-card reveal">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="card-meta">
+                                <span class="card-slash">///</span>
+                                <h3 class="card-title">Creative</h3>
+                                <p class="card-description">
+                                    Campaign microsites, experimental interactions, and award-ready visual systems.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <div class="card-image-box"
+                                style="background-image: url(exp-creative.jpg);"
+                                role="img" aria-label="Creative project visual"></div>
+                        </div>
+                    </div>
+                    <div class="card-label">
+                        <span>/CREATIVE</span>
+                    </div>
+                </article>
             </div>
         </section>
 
         <!-- Footer Section -->
-        <section class="footer-section">
+        <section class="footer-section" id="footer-section">
             <div class="footer-content">
                 <div class="footer-left">
                     <!-- Brand / Logo -->
@@ -553,9 +572,9 @@
                     </div>
 
                     <!-- Project Button -->
-                    <button class="tech-btn text-btn filled-btn">
-                        <span class="text">DISSCUSS A PROJECT</span>
-                    </button>
+                    <a href="mailto:hello@agentducky.com" class="tech-btn text-btn filled-btn">
+                        <span class="text">DISCUSS A PROJECT</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -573,7 +592,8 @@
         <nav class="mobile-nav">
             <a href="#hero-section" class="mobile-nav-link">HOME</a>
             <a href="#services-section" class="mobile-nav-link">SERVICES</a>
-            <a href="#projects-section" class="mobile-nav-link">PROJECTS</a>
+            <a href="#projects-section" class="mobile-nav-link">EXPERIENCE</a>
+            <a href="#footer-section" class="mobile-nav-link">CONTACT</a>
         </nav>
     </div>
 

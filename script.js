@@ -129,41 +129,11 @@ requestAnimationFrame(raf);
 // --- GSAP ScrollTrigger Integration ---
 gsap.registerPlugin(ScrollTrigger);
 
-// --- Experience Horizontal Scroll ---
-function initExperienceScroll() {
-    const container = document.querySelector('.experience-horizontal-container');
-    const wrapper = document.querySelector('.experience-horizontal-wrapper');
-    const grid = document.querySelector('.experience-grid');
-
-    if (!container || !wrapper || !grid) return;
-
-    const scrollWidth = grid.offsetWidth;
-    const windowWidth = window.innerWidth;
-    const horizontalScrollAmount = scrollWidth - windowWidth + (windowWidth * 0.1); // Add small buffer
-
-    gsap.to(wrapper, {
-        x: () => -horizontalScrollAmount,
-        ease: "none",
-        scrollTrigger: {
-            trigger: container,
-            start: "center center",
-            end: () => `+=${horizontalScrollAmount}`,
-            pin: true,
-            scrub: 1,
-            invalidateOnRefresh: true,
-            markers: false
-        }
-    });
-}
-
 // --- GSAP Reveals ---
 function initGSAP() {
     // Only enable animations on devices that have hover (usually desktop/mouse)
     const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     if (isTouchDevice) return;
-
-    // Initialize Experience Horizontal Scroll
-    initExperienceScroll();
 
     gsap.utils.toArray('.reveal').forEach((el) => {
         ScrollTrigger.create({
@@ -190,30 +160,21 @@ const hidePreloader = () => {
     if (!preloader || preloader.classList.contains('fade-out')) return;
 
     const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-
     if (isTouchDevice) {
         document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
     } else {
         initGSAP();
     }
-
     preloader.classList.add('fade-out');
     console.log("Preloader hidden");
 };
 
-// Wait for EVERYTHING
-const waitForAssets = async () => {
-    await new Promise(resolve => window.addEventListener('load', resolve));
-    await document.fonts.ready; // 👈 waits for all fonts
-};
-
-waitForAssets().then(() => {
-    setTimeout(hidePreloader, 800);
+window.addEventListener('load', () => {
+    setTimeout(hidePreloader, 800); // Reduced delay for better UX
 });
 
-// Hard fallback (never leave user stuck)
+// Fallback: Force hide preloader after 4 seconds regardless of load event
 setTimeout(hidePreloader, 4000);
-
 
 // --- Mouse Tracking & Glow/Grid ---
 let mouseX = 0, mouseY = 0;
@@ -288,7 +249,7 @@ magneticEls.forEach(el => {
 });
 
 // Cursor Hover States
-const hoverables = document.querySelectorAll('a, button, .project-card, .service-item, #scrollbar-thumb, .brand');
+const hoverables = document.querySelectorAll('a, button, .experience-card, .service-item, #scrollbar-thumb, .brand');
 hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
@@ -485,5 +446,4 @@ window.addEventListener('resize', () => {
 });
 
 // Run once on load
-
 updateThumbSize();
